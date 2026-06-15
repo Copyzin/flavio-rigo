@@ -1,0 +1,38 @@
+# ============================================================
+# Commit apenas o necessario para RODAR a landing.
+# Tudo abaixo e arquivo de trabalho / ferramenta de design.
+# ============================================================
+
+# Scaffolding da ferramenta de design (Claude Design / design system)
+/Design.md
+/SKILL.md
+/persona.txt
+/_adherence.oxlintrc.json
+/_ds_bundle.js
+/_ds_manifest.json
+/components/
+/guidelines/
+/templates/
+/uploads/
+
+# Estrutura antiga (a landing de producao foi movida para a raiz)
+/ui_kits/
+
+# Fontes/arte de trabalho (PNGs de origem, script de processamento)
+/Assets da hero/
+/asset linhas.png
+/*.png
+/*.jpg
+/*.jpeg
+
+# Assets de marca NAO usados pela pagina (logos/icones sao SVG inline)
+/assets/icons/
+/assets/logo-*.svg
+
+# Ferramentas / temporarios / SO
+/.claude/
+/.playwright-mcp/
+node_modules/
+*.log
+.DS_Store
+Thumbs.db

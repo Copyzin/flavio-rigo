@@ -1,0 +1,39 @@
+/* Defaults de elemento — Flávio Rigo Advocacia */
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  line-height: var(--leading-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text-title);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-title);
+  font-weight: 700;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--size-h1); }
+h2 { font-size: var(--size-h2); }
+h3 { font-size: var(--size-h3); }
+
+p { margin: 0; text-wrap: pretty; }
+
+a {
+  color: var(--link);
+  transition: color var(--dur-fast) var(--ease);
+}
+a:hover { color: var(--link-hover); }
+
+::selection {
+  background: var(--fr-mist);
+  color: var(--fr-navy-deep);
+}

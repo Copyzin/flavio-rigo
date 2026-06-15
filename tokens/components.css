@@ -1,0 +1,190 @@
+/* Classes de componente — Flávio Rigo Advocacia */
+
+/* ── Botões ── */
+.fr-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+.fr-btn:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+.fr-btn:active { transform: translateY(1px); }
+
+.fr-btn--sm { padding: 0.625rem 1.125rem; font-size: 0.9375rem; }
+.fr-btn--md { padding: 0.875rem 1.5rem;  font-size: 1rem; }
+.fr-btn--lg { padding: 1.0625rem 2rem;   font-size: 1.0625rem; border-radius: var(--radius-md); }
+
+.fr-btn--primary { background: var(--action-primary); color: var(--action-on-primary); }
+.fr-btn--primary:hover { background: var(--action-primary-hover); color: var(--action-on-primary); }
+
+.fr-btn--secondary { background: transparent; color: var(--fr-navy); border-color: var(--fr-navy); }
+.fr-btn--secondary:hover { background: var(--fr-cloud); color: var(--fr-navy); }
+
+.fr-btn--ghost { background: transparent; color: var(--fr-navy); }
+.fr-btn--ghost:hover { color: var(--fr-steel); }
+
+.fr-btn--inverse { background: var(--fr-white); color: var(--fr-navy); }
+.fr-btn--inverse:hover { background: var(--fr-cloud); color: var(--fr-navy-deep); }
+
+.fr-btn[disabled], .fr-btn--disabled {
+  background: var(--fr-cloud);
+  color: var(--fr-steel);
+  border-color: transparent;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Badge / selo ── */
+.fr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--size-caption);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.fr-badge--outline { border: 1px solid var(--border-subtle); color: var(--text-subtle); background: transparent; }
+.fr-badge--navy    { background: var(--fr-navy); color: var(--fr-white); }
+.fr-badge--subtle  { background: var(--fr-cloud); color: var(--fr-steel); }
+
+/* ── Card ── */
+.fr-card {
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: border-color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+.fr-card--cloud { background: var(--fr-cloud); border: 1px solid transparent; }
+.fr-card--cloud:hover { border-color: var(--border-subtle); }
+.fr-card--outline { background: var(--fr-white); border: var(--hairline); }
+.fr-card--outline:hover { box-shadow: var(--shadow-card); }
+
+.fr-card__icon { color: var(--fr-steel); margin-bottom: 1rem; display: flex; }
+.fr-card__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--text-title);
+  margin: 0 0 0.5rem;
+}
+.fr-card__body { color: var(--text-body); font-size: 0.97rem; }
+.fr-card__body p { margin: 0; }
+
+/* ── Formulários ── */
+.fr-field { display: flex; flex-direction: column; gap: 0.45rem; font-family: var(--font-body); }
+.fr-field__label { font-size: 0.9rem; font-weight: 600; color: var(--text-title); }
+.fr-field__control {
+  font: inherit;
+  font-size: 1rem;
+  color: var(--text-body);
+  background: var(--fr-white);
+  border: var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1rem;
+  transition: border-color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+.fr-field__control::placeholder { color: var(--fr-steel); opacity: 0.7; }
+.fr-field__control:focus {
+  outline: none;
+  border-color: var(--fr-steel);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+.fr-field__hint { font-size: 0.8rem; color: var(--text-subtle); }
+
+/* ── Divisores e cabeçalhos de seção ── */
+.fr-divider { border: 0; border-top: var(--hairline); margin: 0; }
+
+.fr-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--size-caption);
+  font-weight: 700;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin: 0 0 0.75rem;
+}
+.fr-lead {
+  font-size: var(--size-lead);
+  color: var(--text-body);
+  max-width: 58ch;
+}
+
+/* ── Header do site ── */
+.fr-header {
+  background: var(--fr-white);
+  border-bottom: var(--hairline);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.fr-header__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.fr-header__nav { display: flex; align-items: center; gap: 1.75rem; }
+.fr-header__link {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--fr-ink);
+  text-decoration: none;
+}
+.fr-header__link:hover { color: var(--fr-steel); }
+
+/* ── Faixa CTA ── */
+.fr-cta-band {
+  background: var(--surface-inverse);
+  color: var(--text-inverse);
+  text-align: center;
+  padding: var(--space-9) var(--space-5);
+}
+.fr-cta-band h2 { color: var(--fr-white); }
+.fr-cta-band p { color: var(--text-inverse-subtle); }
+
+/* ── Rodapé ── */
+.fr-footer {
+  background: var(--surface-inverse-deep);
+  color: var(--text-inverse-subtle);
+  font-size: var(--size-small);
+}
+.fr-footer a { color: var(--fr-white); text-decoration: none; }
+.fr-footer a:hover { color: var(--fr-mist); }
+
+/* ── Botão flutuante (WhatsApp) ── */
+.fr-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fr-navy);
+  color: var(--fr-white);
+  box-shadow: var(--shadow-float);
+  z-index: 60;
+  transition: background-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.fr-fab:hover { background: var(--fr-navy-deep); color: var(--fr-white); transform: translateY(-2px); }

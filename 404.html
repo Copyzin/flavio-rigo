@@ -1,0 +1,220 @@
+<!-- @dsCard group="Landing Page" viewport="1280x720" name="404 — Flávio Rigo Advocacia" subtitle="Página de erro 404 com balança da justiça e créditos Almeida" -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Página não encontrada · Flávio Rigo Advocacia</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ============================================================
+   404 — Flávio Rigo Advocacia
+   Tokens herdados de ../../styles.css.
+   ============================================================ */
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  display: flex; flex-direction: column; min-height: 100dvh;
+  background: var(--fr-navy-deep); font-family: var(--font-body); color: #fff;
+  overflow-x: hidden;
+}
+
+/* ---------- Film grain (noise effect.md) ---------- */
+.grain {
+  position: fixed; inset: 0; pointer-events: none; z-index: 900;
+  opacity: .085; mix-blend-mode: screen;
+  background-repeat: repeat; background-size: 200px 200px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Main 404 area ---------- */
+.notfound {
+  flex: 1; position: relative;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: clamp(64px, 12vw, 120px) 24px clamp(56px, 8vw, 96px);
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 36%, rgba(100,135,175,.14), transparent 52%),
+    radial-gradient(circle at 50% 80%, rgba(7,13,26,.55), transparent 56%),
+    linear-gradient(170deg, var(--fr-navy-deep) 0%, var(--fr-navy) 55%, var(--fr-navy-deep) 100%);
+}
+
+/* ---------- Ghost "404" (purely decorative, behind artwork) ---------- */
+.notfound__ghost {
+  font-family: var(--font-display);
+  font-size: clamp(7rem, 26vw, 18rem);
+  font-weight: 700; letter-spacing: -.04em; line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(201,212,228,.07);
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -54%);
+  pointer-events: none; user-select: none; white-space: nowrap;
+}
+
+/* ---------- Scales of Justice artwork ---------- */
+.notfound__art {
+  width: clamp(150px, 24vw, 200px);
+  height: auto;
+  color: var(--fr-mist);
+  opacity: .75;
+  margin-bottom: clamp(32px, 5vw, 48px);
+  position: relative; z-index: 1;
+  filter: drop-shadow(0 0 32px rgba(91,122,157,.18));
+}
+
+/* ---------- Copy ---------- */
+.notfound__eyebrow {
+  font-family: var(--font-body); font-size: var(--size-caption);
+  font-weight: 700; letter-spacing: var(--tracking-caps); text-transform: uppercase;
+  color: var(--fr-steel);
+  margin-bottom: 18px;
+  position: relative; z-index: 1;
+}
+.notfound__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+  font-weight: 700; letter-spacing: var(--tracking-title); line-height: var(--leading-title);
+  color: #fff;
+  margin-bottom: 14px;
+  position: relative; z-index: 1;
+  text-wrap: balance;
+}
+.notfound__sub {
+  font-size: clamp(.95rem, 2vw, 1.075rem);
+  color: var(--fr-mist); max-width: 40ch;
+  line-height: var(--leading-body);
+  margin-bottom: clamp(32px, 5vw, 44px);
+  position: relative; z-index: 1;
+  text-wrap: pretty;
+}
+
+/* ---------- Back to Home button ---------- */
+.btn-home {
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-family: var(--font-body); font-weight: 600;
+  font-size: 1rem; line-height: 1;
+  padding: .95rem 1.9rem;
+  background: #fff; color: var(--fr-navy);
+  border: 1.5px solid transparent; border-radius: var(--radius-md);
+  text-decoration: none; cursor: pointer;
+  position: relative; z-index: 1;
+  transition:
+    background-color .25s var(--ease),
+    color .25s var(--ease),
+    transform .3s cubic-bezier(.22,1,.36,1),
+    box-shadow .3s cubic-bezier(.22,1,.36,1);
+}
+.btn-home:hover { background: var(--fr-cloud); color: var(--fr-navy-deep); transform: translateY(-2px); box-shadow: 0 18px 42px rgba(0,0,0,.38); }
+.btn-home:active { transform: translateY(0) scale(.985); }
+.btn-home svg { transition: transform .25s var(--ease); }
+.btn-home:hover svg { transform: translateX(-3px); }
+
+/* ---------- Footer credits (mirrors site-footer__bottom) ---------- */
+.foot-credits {
+  background: var(--fr-navy-deep);
+  border-top: 1px solid rgba(255,255,255,.08);
+  font-family: var(--font-body); font-size: .82rem; color: var(--fr-mist);
+}
+.foot-credits__inner {
+  max-width: var(--container); margin: 0 auto; padding: 22px 24px;
+  display: flex; flex-wrap: wrap; gap: 6px 24px;
+  justify-content: space-between; align-items: center;
+}
+.foot-credits p { margin: 0; }
+.foot-credits a { color: var(--fr-mist); text-decoration: underline; text-underline-offset: 3px; transition: color .2s ease; }
+.foot-credits a:hover { color: #fff; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .foot-credits__inner { flex-direction: column; text-align: center; gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-home, .btn-home svg { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<main class="notfound" id="main">
+
+  <!-- Ghost "404" (decorative layer) -->
+  <span class="notfound__ghost" aria-hidden="true">404</span>
+
+  <!-- Scales of Justice — linework editorial, tom-sobre-tom -->
+  <svg class="notfound__art" viewBox="0 0 240 280" fill="none"
+       stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+
+    <!-- Anel decorativo externo (como o selo da hero) -->
+    <circle cx="120" cy="126" r="112" stroke-width=".65" stroke-dasharray="2.5 9" opacity=".45"/>
+
+    <!-- Pilar central -->
+    <line x1="120" y1="22" x2="120" y2="246" stroke-width="1.6"/>
+
+    <!-- Base em degrau -->
+    <path d="M84 246 H156" stroke-width="1.5"/>
+    <line x1="84" y1="246" x2="72" y2="260" stroke-width="1"/>
+    <line x1="156" y1="246" x2="168" y2="260" stroke-width="1"/>
+    <path d="M72 260 H168" stroke-width="1.5"/>
+
+    <!-- Finial do topo -->
+    <circle cx="120" cy="22" r="5.5" stroke-width="1.4"/>
+
+    <!-- Pivo do fiel -->
+    <circle cx="120" cy="84" r="5" stroke-width="1.4"/>
+
+    <!-- Fiel horizontal (nivel — balanca em equilibrio) -->
+    <line x1="28" y1="84" x2="212" y2="84" stroke-width="1.6"/>
+
+    <!-- Extremidades do fiel -->
+    <circle cx="28" cy="84" r="3" stroke-width="1"/>
+    <circle cx="212" cy="84" r="3" stroke-width="1"/>
+
+    <!-- Correntes lado esquerdo (V da extremidade ate as bordas do prato) -->
+    <line x1="28" y1="84" x2="14" y2="170" stroke-width="1"/>
+    <line x1="28" y1="84" x2="76" y2="170" stroke-width="1"/>
+
+    <!-- Correntes lado direito -->
+    <line x1="212" y1="84" x2="164" y2="170" stroke-width="1"/>
+    <line x1="212" y1="84" x2="226" y2="170" stroke-width="1"/>
+
+    <!-- Prato esquerdo (arco) -->
+    <path d="M14 170 Q45 198 76 170" stroke-width="1.6"/>
+
+    <!-- Prato direito (arco) -->
+    <path d="M164 170 Q195 198 226 170" stroke-width="1.6"/>
+
+  </svg>
+
+  <!-- Textos -->
+  <p class="notfound__eyebrow">Erro 404</p>
+  <h1 class="notfound__title">Página não encontrada</h1>
+  <p class="notfound__sub">A rota que você buscou não existe ou foi removida.<br>O escritório está a um clique de distância.</p>
+
+  <!-- CTA -->
+  <a class="btn-home" href="index.html">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="19" y1="12" x2="5" y2="12"/>
+      <polyline points="12 19 5 12 12 5"/>
+    </svg>
+    Voltar para o início
+  </a>
+
+</main>
+
+<!-- Créditos Almeida (idêntico ao site-footer__bottom da landing) -->
+<footer class="foot-credits" role="contentinfo">
+  <div class="foot-credits__inner">
+    <p>© <span id="yr"></span> Flávio Rigo Sociedade Individual de Advocacia. Todos os direitos reservados.</p>
+    <p class="almeida-credit">Site desenvolvido por <a href="https://almeidaescaladigital.com/" target="_blank" rel="noopener">Almeida Escala Digital</a>. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

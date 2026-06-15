@@ -1,0 +1,37 @@
+/* Espaçamento, raios, sombras e movimento — Flávio Rigo Advocacia
+   O respiro é parte da identidade: muito espaço em branco, sombras quase imperceptíveis,
+   transições suaves (0.2–0.3s), nada chamativo. */
+
+:root {
+  /* Escala de espaçamento (base 4px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Raios — cantos levemente arredondados */
+  --radius-sm:   6px;   /* botões, inputs */
+  --radius-md:   8px;   /* botões grandes */
+  --radius-lg:   12px;  /* cards */
+  --radius-pill: 999px; /* selos, badges */
+
+  /* Sombras — sempre azuladas, nunca pretas, sempre sutis */
+  --shadow-card:  0 1px 2px rgba(19, 32, 58, 0.05), 0 12px 32px -16px rgba(19, 32, 58, 0.18);
+  --shadow-float: 0 4px 14px rgba(19, 32, 58, 0.2);
+
+  /* Bordas */
+  --hairline: 1px solid var(--border-subtle);
+
+  /* Movimento */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --dur-fast: 0.2s; /* @kind other */
+  --dur-slow: 0.3s; /* @kind other */
+
+  /* Layout */
+  --container: 1080px;
+}

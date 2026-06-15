@@ -1,0 +1,42 @@
+/* Cores — Flávio Rigo Advocacia
+   Regras do briefing:
+   - PROIBIDO #000000 em qualquer elemento. O "escuro" da marca é o azul marinho ou o cinza-azulado.
+   - Sem dourado/amarelo, sem cores quentes fortes. Paleta monocromática azul.
+   - Proporção: ~70% branco/claros, ~25% azul marinho, ~5% acentos. */
+
+:root {
+  /* ── Paleta base ── */
+  --fr-navy:      #1B2A4A; /* Primária — logo, títulos, CTAs, rodapé */
+  --fr-navy-deep: #13203A; /* Hover / rodapé profundo */
+  --fr-white:     #FFFFFF; /* Base */
+  --fr-cloud:     #F4F6FA; /* Off-white azulado — seções alternadas, cards */
+  --fr-mist:      #C9D4E4; /* Pastel — bordas, divisores, ícones secundários */
+  --fr-steel:     #5B7A9D; /* Acento — subtítulos, detalhes, hover de links */
+  --fr-ink:       #2E3A4E; /* Texto de corpo (substitui o preto) */
+
+  /* ── Aliases semânticos ── */
+  --surface-page:         var(--fr-white);
+  --surface-section:      var(--fr-cloud);
+  --surface-card:         var(--fr-cloud);
+  --surface-inverse:      var(--fr-navy);
+  --surface-inverse-deep: var(--fr-navy-deep);
+
+  --text-title:          var(--fr-navy);
+  --text-body:           var(--fr-ink);
+  --text-subtle:         var(--fr-steel);
+  --text-inverse:        var(--fr-white);
+  --text-inverse-subtle: var(--fr-mist);
+
+  --border-subtle:  var(--fr-mist);
+  --border-strong:  var(--fr-navy);
+  --border-inverse: rgba(255, 255, 255, 0.22);
+
+  --action-primary:       var(--fr-navy);
+  --action-primary-hover: var(--fr-navy-deep);
+  --action-on-primary:    var(--fr-white);
+
+  --link:       var(--fr-navy);
+  --link-hover: var(--fr-steel);
+
+  --focus-ring: rgba(91, 122, 157, 0.45);
+}

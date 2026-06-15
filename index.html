@@ -1,0 +1,470 @@
+<!-- @dsCard group="Landing Page" viewport="1280x720" name="Landing — Flávio Rigo Advocacia" subtitle="Página completa (padrões Almeida Escala): hero, credenciais, sobre c/ text-trace, áreas, FAQ, FAB+chat WhatsApp e grão" -->
+<!-- @startingPoint section="Marketing" subtitle="Landing page completa da advocacia (desktop + mobile)" viewport="1280x720" -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Tag Manager — cole o ID do container (GTM-XXXXXXX) e descomente este bloco -->
+<!--
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+-->
+<!-- End Google Tag Manager -->
+
+<title>Flávio Rigo — Advocacia · Atendimento online em todo o Brasil</title>
+<meta name="description" content="Advocacia com atendimento 100% online: regularização de imóveis, restituição de Imposto de Renda para aposentados com doenças graves, sucessões e inventários. Tire suas dúvidas pelo WhatsApp.">
+<meta property="og:title" content="Flávio Rigo — Advocacia · Atendimento online em todo o Brasil">
+<meta property="og:description" content="Regularização de imóveis, restituição de IR para aposentados com doenças graves, sucessões e inventários. Sede em Pouso Novo – RS, atendimento 100% online.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="assets/css/landing.css?v=17">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) — descomente junto com o bloco do <head> -->
+<!--
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+-->
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" data-screen-label="Header">
+  <div class="site-header__inner">
+    <a class="site-header__brand" href="#top" aria-label="Flávio Rigo Advocacia — início">
+      <span class="brand-mark">
+        <svg width="40" height="40" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M24 34 H96 M24 34 V48 M96 34 V48 M53 45 L60 34 L67 45 M60 45 V86 M48 86 H72" stroke="#1B2A4A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><text x="24" y="68" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#1B2A4A">F</text><text x="96" y="68" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#1B2A4A">R</text></svg>
+      </span>
+      <span>
+        <span class="brand-name">Flávio Rigo</span>
+        <span class="brand-sub">Sociedade Individual de Advocacia</span>
+      </span>
+    </a>
+    <nav class="site-header__nav" aria-label="Navegação principal">
+      <a class="site-header__link" href="#sobre">Sobre</a>
+      <a class="site-header__link" href="#areas">Áreas de atuação</a>
+      <a class="site-header__link" href="#atendimento">Atendimento</a>
+      <a class="site-header__link" href="#faq">Dúvidas</a>
+      <a class="site-header__link" href="#localizacao">Localização</a>
+      <a class="btn btn--primary btn--sm" href="#contato">Falar no WhatsApp</a>
+    </nav>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="hamburger__bars"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<nav id="mobileMenu" aria-label="Navegação mobile">
+  <div class="mm-top">
+    <span class="mm-brand">
+      <svg width="34" height="34" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M24 34 H96 M24 34 V48 M96 34 V48 M53 45 L60 34 L67 45 M60 45 V86 M48 86 H72" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><text x="24" y="68" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#FFFFFF">F</text><text x="96" y="68" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#FFFFFF">R</text></svg>
+      <span>Flávio Rigo<small>Advocacia</small></span>
+    </span>
+    <button class="mm-close" id="mobileMenuClose" type="button" aria-label="Fechar menu"></button>
+  </div>
+
+  <p class="mm-eyebrow" data-menu-item>Navegue pelo site</p>
+
+  <div class="mm-links">
+    <a data-menu-item href="#sobre"><i aria-hidden="true">01</i><span>Sobre<small>Quem conduz o seu caso</small></span></a>
+    <a data-menu-item href="#areas"><i aria-hidden="true">02</i><span>Áreas de atuação<small>Imóveis · IR doenças graves · Inventários</small></span></a>
+    <a data-menu-item href="#atendimento"><i aria-hidden="true">03</i><span>Atendimento<small>Como funciona, passo a passo</small></span></a>
+    <a data-menu-item href="#faq"><i aria-hidden="true">04</i><span>Dúvidas<small>Respostas às perguntas mais comuns</small></span></a>
+    <a data-menu-item href="#localizacao"><i aria-hidden="true">05</i><span>Localização<small>Pouso Novo – RS · mapa e rotas</small></span></a>
+  </div>
+
+  <div class="mm-foot" data-menu-cta>
+    <p class="mm-hint">Prefere ir direto ao ponto? Mande sua dúvida — o advogado responde pelo WhatsApp.</p>
+    <a class="btn btn--inverse btn--lg" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener">
+      <span class="wa-ico wa-ico--green" aria-hidden="true"></span> Falar no WhatsApp
+    </a>
+    <div class="mm-meta">
+      <a href="tel:+5551998817109">(51) 99881-7109</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://www.instagram.com/advocaciaflaviorigo" target="_blank" rel="noopener">@advocaciaflaviorigo</a>
+    </div>
+    <p class="mm-oab">OAB/UF nº 000.000 · atendimento em todo o Brasil</p>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ============ HERO (navy dramatica, tipografica) ============ -->
+  <section class="hero" data-screen-label="Hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__deco" aria-hidden="true">
+      <span class="hero__arch"></span>
+      <span class="hero__linework"></span>
+      <span class="hero__deco-tag">&#201;tica &#183; T&#233;cnica &#183; Confian&#231;a</span>
+    </div>
+    <div class="hero__inner">
+      <p class="eyebrow hero__eyebrow" data-anim="hero-eyebrow">Advocacia · Atendimento 100% online</p>
+      <h1 id="heroTitle">Segurança jurídica para o que é <em>seu</em>.</h1>
+      <p class="hero__sub" data-anim="hero-sub">Regularização de imóveis, restituição de Imposto de Renda para aposentados com doenças graves e sucessões e inventários — conduzidos diretamente comigo, com seriedade e linguagem clara, em todo o Brasil.</p>
+      <div class="hero__actions" data-anim="hero-cta">
+        <a class="btn btn--inverse btn--lg hero-whatsapp-cta" href="#contato">
+          <span class="wa-ico wa-ico--green" aria-hidden="true"></span> Falar no WhatsApp
+        </a>
+        <a class="btn btn--ghost-inverse btn--lg" href="#areas">Ver áreas de atuação</a>
+      </div>
+      <div data-anim="hero-badge">
+        <span class="hero__badge">OAB/UF nº 000.000 · atendimento direto com o advogado · todo o Brasil</span>
+      </div>
+    </div>
+    <a class="hero__scrollcue" href="#numeros" data-anim="hero-badge" aria-label="Role para conhecer">
+      <span class="hero__mousecue" aria-hidden="true">
+        <span class="hero__mouse"><span class="hero__mousewheel"></span></span>
+        <span class="hero__mousetext">role para conhecer</span>
+      </span>
+      <span class="hero__scrollline" aria-hidden="true"></span>
+    </a>
+  </section>
+
+  <!-- ============ BARRA DE NUMEROS ============ -->
+  <section class="numbar" id="numeros" aria-label="Em números">
+    <div class="numbar__inner">
+      <div class="num-item" data-anim="cred-item">
+        <span class="num-item__value" data-count="3">3</span>
+        <span class="num-item__label">áreas de atuação<br>especializadas</span>
+      </div>
+      <div class="num-item" data-anim="cred-item">
+        <span class="num-item__value" data-count="100" data-suffix="%">100%</span>
+        <span class="num-item__label">atendimento online,<br>direto com o advogado</span>
+      </div>
+      <div class="num-item" data-anim="cred-item">
+        <span class="num-item__value" data-count="27">27</span>
+        <span class="num-item__label">estados atendidos —<br>todo o Brasil</span>
+      </div>
+      <!-- slot reservado: ativar quando o numero real for confirmado
+      <div class="num-item" data-anim="cred-item">
+        <span class="num-item__value" data-count="00" data-suffix="+">00+</span>
+        <span class="num-item__label">anos de atuação<br>em advocacia</span>
+      </div>
+      -->
+    </div>
+  </section>
+
+  <!-- ============ SOBRE ============ -->
+  <section class="section sobre" id="sobre" data-screen-label="Sobre">
+    <div class="wrap sobre__inner">
+      <div class="sobre__portrait" data-anim="about-image" aria-hidden="true">
+        <div class="photo-slot">
+          <svg width="64" height="64" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M24 34 H96 M24 34 V48 M96 34 V48 M53 45 L60 34 L67 45 M60 45 V86 M48 86 H72" stroke="#5B7A9D" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><text x="24" y="68" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#5B7A9D">F</text><text x="96" y="68" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#5B7A9D">R</text></svg>
+          <small>Espaço para foto profissional (opcional)</small>
+        </div>
+      </div>
+      <div class="sobre__body" data-anim="about-text">
+        <p class="eyebrow">Sobre o advogado</p>
+        <h2 class="section-title" style="margin-bottom:30px;">Seriedade e honestidade, do primeiro contato ao fim do caso.</h2>
+        <p data-anim="text-trace" data-trace-stagger-ms="14">Sou Flávio Rigo, advogado. Atuo na regularização de imóveis, na restituição de Imposto de Renda para aposentados com doenças graves e em sucessões e inventários. Cada caso é conduzido diretamente comigo, com linguagem clara e sem juridiquês — para que você entenda cada passo e decida com tranquilidade.</p>
+        <div class="sobre__badges">
+          <span class="chip chip--outline">OAB/UF nº 000.000</span>
+          <span class="chip chip--subtle">Atendimento em todo o Brasil</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AREAS DE ATUACAO ============ -->
+  <section class="section" id="areas" data-screen-label="Áreas de atuação">
+    <div class="wrap">
+      <div class="areas__head">
+        <p class="eyebrow" data-anim="section-title">Áreas de atuação</p>
+        <h2 class="section-title" data-anim="section-title">Em que posso orientar você</h2>
+      </div>
+      <div class="areas__zig">
+
+        <article class="area-block">
+          <div class="area-block__body" data-anim="about-text">
+            <span class="area-block__num" aria-hidden="true">01</span>
+            <h3>Regularização de Imóveis</h3>
+            <p>Usucapião, retificação de área, documentação e a regularização que falta para o imóvel ser, de fato, seu.</p>
+            <p class="area-block__check-title">Você pode ter esse direito se…</p>
+            <ul class="area-block__check">
+              <li>mora ou tem posse de um imóvel há anos, mas sem escritura;</li>
+              <li>comprou por "contrato de gaveta" e nunca registrou;</li>
+              <li>construiu ou ampliou e a área não está averbada;</li>
+              <li>recebeu o imóvel de herança e o registro nunca foi atualizado.</li>
+            </ul>
+            <a class="btn btn--secondary btn--md wa-ghost" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20regulariza%C3%A7%C3%A3o%20de%20im%C3%B3vel." target="_blank" rel="noopener">Falar sobre meu imóvel</a>
+          </div>
+          <div class="area-block__visual" data-anim="about-image" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V8l7-5 7 5v13"></path><path d="M9 21v-6h6v6"></path></svg>
+          </div>
+        </article>
+
+        <article class="area-block area-block--flip">
+          <div class="area-block__body" data-anim="about-text">
+            <span class="area-block__num" aria-hidden="true">02</span>
+            <h3>Restituição de IR — Doenças Graves</h3>
+            <p>Aposentados e pensionistas com doença grave prevista em lei podem ter direito à isenção e à restituição do Imposto de Renda.</p>
+            <p class="area-block__check-title">Você pode ter esse direito se…</p>
+            <ul class="area-block__check">
+              <li>é aposentado(a) ou pensionista; e</li>
+              <li>tem diagnóstico de doença prevista na Lei 7.713/88 — como neoplasia maligna (câncer), cardiopatia grave, Parkinson ou esclerose múltipla, entre outras;</li>
+              <li>pagou Imposto de Renda sobre a aposentadoria nos últimos anos.</li>
+            </ul>
+            <p class="area-block__note">Lista exemplificativa — cada caso precisa ser confirmado com o advogado.</p>
+            <a class="btn btn--secondary btn--md wa-ghost" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Sou%20aposentado(a)%20e%20gostaria%20de%20saber%20se%20tenho%20direito%20%C3%A0%20isen%C3%A7%C3%A3o%20de%20IR." target="_blank" rel="noopener">Verificar meu direito</a>
+          </div>
+          <div class="area-block__visual" data-anim="about-image" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+          </div>
+        </article>
+
+        <article class="area-block">
+          <div class="area-block__body" data-anim="about-text">
+            <span class="area-block__num" aria-hidden="true">03</span>
+            <h3>Sucessões e Inventários</h3>
+            <p>Inventário (judicial ou em cartório), partilha e planejamento sucessório conduzidos com cuidado, para resolver sem desgaste familiar.</p>
+            <p class="area-block__check-title">Você pode precisar desse serviço se…</p>
+            <ul class="area-block__check">
+              <li>houve falecimento na família e há bens a partilhar;</li>
+              <li>existe um inventário parado ou nunca aberto;</li>
+              <li>quer organizar a sucessão em vida, com segurança para a família.</li>
+            </ul>
+            <a class="btn btn--secondary btn--md wa-ghost" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20invent%C3%A1rio%20ou%20sucess%C3%A3o." target="_blank" rel="noopener">Falar sobre inventário</a>
+          </div>
+          <div class="area-block__visual" data-anim="about-image" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M16 13H8"></path><path d="M16 17H8"></path><path d="M10 9H8"></path></svg>
+          </div>
+        </article>
+
+      </div>
+      <p class="areas__note">Conteúdo de caráter informativo. As áreas e demais informações devem ser confirmadas com o advogado.</p>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA ============ -->
+  <section class="section steps" id="atendimento" data-screen-label="Como funciona">
+    <div class="wrap">
+      <div class="steps__head">
+        <p class="eyebrow" data-anim="section-title">Atendimento</p>
+        <h2 class="section-title" data-anim="section-title">Como funciona o atendimento online</h2>
+      </div>
+      <div class="tl" id="timeline">
+        <div class="tl__track" aria-hidden="true"><span class="tl__progress" id="tlProgress"></span></div>
+        <div class="tl__item">
+          <span class="tl__dot" data-n="01" aria-hidden="true"></span>
+          <div class="tl__card"><h3>Contato inicial</h3><p>Você me envia sua dúvida pelo WhatsApp, sem compromisso.</p></div>
+        </div>
+        <div class="tl__item">
+          <span class="tl__dot" data-n="02" aria-hidden="true"></span>
+          <div class="tl__card"><h3>Análise do caso</h3><p>Estudo os documentos e o contexto com atenção.</p></div>
+        </div>
+        <div class="tl__item">
+          <span class="tl__dot" data-n="03" aria-hidden="true"></span>
+          <div class="tl__card"><h3>Orientação</h3><p>Explico os caminhos possíveis em linguagem clara.</p></div>
+        </div>
+        <div class="tl__item">
+          <span class="tl__dot" data-n="04" aria-hidden="true"></span>
+          <div class="tl__card"><h3>Acompanhamento</h3><p>Atualizações diretas comigo, do início ao fim.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DIFERENCIAIS + QUOTE ============ -->
+  <section class="section diff" data-screen-label="Diferenciais">
+    <div class="wrap diff__inner">
+      <ul class="diff__list" data-anim="diff-list">
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M20 6 9 17l-5-5"></path></svg></span><span><b>Atendimento direto</b><span>Você fala comigo, sem intermediários.</span></span></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M20 6 9 17l-5-5"></path></svg></span><span><b>Sem burocracia</b><span>Documentos e conversas pelo WhatsApp, no seu ritmo.</span></span></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M20 6 9 17l-5-5"></path></svg></span><span><b>Ética e transparência</b><span>Explicações honestas sobre caminhos e possibilidades.</span></span></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M20 6 9 17l-5-5"></path></svg></span><span><b>Online, em todo o Brasil</b><span>De qualquer lugar, sem deslocamento.</span></span></li>
+      </ul>
+      <blockquote class="quote" data-anim="diff-quote">
+        <p data-anim="text-trace" data-trace-stagger-ms="18">Segurança jurídica começa com uma conversa honesta. Explico cada caminho com clareza, para você decidir com tranquilidade.</p>
+        <cite>Flávio Rigo · Advogado</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq" id="faq" data-screen-label="Dúvidas frequentes">
+    <div class="wrap faq__inner">
+      <div class="faq__head">
+        <p class="eyebrow" data-anim="section-title">Dúvidas frequentes</p>
+        <h2 class="section-title" data-anim="section-title">Perguntas comuns</h2>
+      </div>
+      <div class="faq-list" id="faqList">
+        <details class="faq-item" data-anim="faq-item">
+          <summary><span>Você atende online?</span><span class="faq-mark" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Sim. O atendimento é 100% online, em todo o Brasil, direto comigo pelo WhatsApp — sem necessidade de deslocamento.</p></div>
+        </details>
+        <details class="faq-item" data-anim="faq-item">
+          <summary><span>Como funciona a primeira conversa?</span><span class="faq-mark" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Você me envia sua dúvida pelo WhatsApp e fazemos uma análise inicial do seu caso, sem compromisso.</p></div>
+        </details>
+        <details class="faq-item" data-anim="faq-item">
+          <summary><span>Aposentado com doença grave tem direito à isenção de Imposto de Renda?</span><span class="faq-mark" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Em muitos casos, sim. A lei prevê isenção para diversas doenças graves; analiso o seu caso para verificar o direito e a eventual restituição de valores.</p></div>
+        </details>
+        <details class="faq-item" data-anim="faq-item">
+          <summary><span>O que preciso para regularizar meu imóvel?</span><span class="faq-mark" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Depende da situação. Na conversa inicial, identifico a documentação necessária e o caminho mais adequado para a regularização.</p></div>
+        </details>
+        <details class="faq-item" data-anim="faq-item">
+          <summary><span>Como funciona um inventário?</span><span class="faq-mark" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>O inventário pode ser feito pela via judicial ou em cartório, conforme o caso. Cuido da partilha e da documentação para resolver com segurança.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOCALIZACAO ============ -->
+  <section class="section local" id="localizacao" data-screen-label="Localização">
+    <div class="wrap local__inner">
+      <div class="local__info" data-anim="about-text">
+        <p class="eyebrow">Localização</p>
+        <h2 class="section-title">Sede em Pouso Novo – RS, atendimento em todo o Brasil</h2>
+        <p class="local__lead">O atendimento é 100% online, mas o escritório tem endereço fixo no interior do Rio Grande do Sul. Se preferir, agende uma visita pelo WhatsApp.</p>
+        <ul class="local__list">
+          <li>
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+            <span><b>Endereço</b><span>Estrada Geral, s/nº · Pouso Novo – RS · CEP 95945-000</span></span>
+          </li>
+          <li>
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+            <span><b>Telefone e WhatsApp</b><span><a href="tel:+5551998817109">(51) 99881-7109</a></span></span>
+          </li>
+        </ul>
+        <div class="local__actions">
+          <a class="btn btn--primary btn--md" href="https://www.google.com/maps/dir/?api=1&amp;destination=Estrada%20Geral%2C%20Pouso%20Novo%20-%20RS%2C%2095945-000" target="_blank" rel="noopener">Traçar rota no Google Maps</a>
+          <a class="btn btn--secondary btn--md wa-ghost" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20escrit%C3%B3rio." target="_blank" rel="noopener">Agendar visita</a>
+        </div>
+      </div>
+      <div class="local__map" data-anim="about-image">
+        <iframe
+          title="Mapa — Estrada Geral, Pouso Novo – RS"
+          src="https://www.google.com/maps?q=Estrada%20Geral%2C%20Pouso%20Novo%20-%20RS%2C%2095945-000&amp;z=14&amp;output=embed"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="section cta-final" id="contato" data-screen-label="CTA final">
+    <div class="cta-final__bg" aria-hidden="true"></div>
+    <div class="cta-final__inner">
+      <h2 data-anim="text-trace" data-trace-stagger-ms="16">Tire suas dúvidas com quem vai cuidar do seu caso.</h2>
+      <p data-anim="final-cta">Atendimento online e direto com o advogado, em todo o Brasil.</p>
+      <a class="btn btn--inverse btn--lg hero-whatsapp-cta cta-final__btn" data-anim="final-cta" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener">
+        <span class="wa-ico wa-ico--green" aria-hidden="true"></span> Falar no WhatsApp
+      </a>
+      <div class="cta-final__shortcuts" data-anim="final-cta">
+        <a class="cta-pill" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20regulariza%C3%A7%C3%A3o%20de%20im%C3%B3vel." target="_blank" rel="noopener">Quero regularizar um imóvel</a>
+        <a class="cta-pill" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Sou%20aposentado(a)%20e%20gostaria%20de%20saber%20se%20tenho%20direito%20%C3%A0%20isen%C3%A7%C3%A3o%20de%20IR." target="_blank" rel="noopener">Sou aposentado com doença grave</a>
+        <a class="cta-pill" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20invent%C3%A1rio%20ou%20sucess%C3%A3o." target="_blank" rel="noopener">Preciso de inventário</a>
+      </div>
+      <p class="cta-final__trust" data-anim="final-cta">resposta pelo WhatsApp · sem compromisso · atendimento em todo o Brasil</p>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" data-screen-label="Rodapé">
+  <div class="site-footer__inner">
+    <div>
+      <svg width="44" height="44" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M24 34 H96 M24 34 V48 M96 34 V48 M53 45 L60 34 L67 45 M60 45 V86 M48 86 H72" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><text x="24" y="68" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#FFFFFF">F</text><text x="96" y="68" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#FFFFFF">R</text></svg>
+      <p style="color:#fff;font-weight:600;margin:14px 0 6px;font-family:var(--font-display);font-size:1.2rem;">Flávio Rigo</p>
+      <p style="max-width:34ch;">Sociedade Individual de Advocacia · atendimento online em todo o Brasil.</p>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <div class="foot-contacts">
+        <a href="https://wa.me/5551998817109" target="_blank" rel="noopener">WhatsApp · (51) 99881-7109</a>
+        <a href="tel:+5551998817109">Telefone · (51) 99881-7109</a>
+        <a href="https://www.instagram.com/advocaciaflaviorigo" target="_blank" rel="noopener">Instagram · @advocaciaflaviorigo</a>
+        <a href="mailto:contato@flaviorigo.adv.br">contato@flaviorigo.adv.br</a>
+        <span>Estrada Geral, s/nº · Pouso Novo – RS · CEP 95945-000</span>
+        <span>OAB/UF nº 000.000</span>
+      </div>
+      <div class="foot-social">
+        <a class="social-link" href="https://wa.me/5551998817109" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <span class="social-mask" aria-hidden="true" style="-webkit-mask-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.748-.984zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01a1.1 1.1 0 0 0-.792.372c-.272.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z'/%3E%3C/svg%3E&quot;);mask-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.748-.984zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01a1.1 1.1 0 0 0-.792.372c-.272.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z'/%3E%3C/svg%3E&quot;);"></span>
+        </a>
+        <a class="social-link" href="https://www.instagram.com/advocaciaflaviorigo" target="_blank" rel="noopener" aria-label="Instagram">
+          <span class="social-mask" aria-hidden="true" style="-webkit-mask-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.25.07 1.62.07 4.81s-.01 3.56-.07 4.81c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.25.06-1.62.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.56 2.2 15.19 2.2 12s.01-3.56.07-4.81c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.44 2.21 8.81 2.2 12 2.2zm0 1.8c-3.14 0-3.5.01-4.74.07-.9.04-1.38.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.33-.28.81-.32 1.71C3.21 8.74 3.2 9.1 3.2 12s.01 3.26.08 4.49c.04.9.19 1.38.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.33.13.81.28 1.71.32 1.24.06 1.6.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.38-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.33.28-.81.32-1.71.06-1.23.07-1.59.07-4.49s-.01-3.26-.07-4.49c-.04-.9-.19-1.38-.32-1.71a2.85 2.85 0 0 0-.69-1.06 2.85 2.85 0 0 0-1.06-.69c-.33-.13-.81-.28-1.71-.32C15.5 4.01 15.14 4 12 4zm0 3.06A4.94 4.94 0 1 1 12 16.94 4.94 4.94 0 0 1 12 7.06zm0 1.8A3.14 3.14 0 1 0 12 15.14 3.14 3.14 0 0 0 12 8.86zm6.27-2.06a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z'/%3E%3C/svg%3E&quot;);mask-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.25.07 1.62.07 4.81s-.01 3.56-.07 4.81c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.25.06-1.62.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.56 2.2 15.19 2.2 12s.01-3.56.07-4.81c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.44 2.21 8.81 2.2 12 2.2zm0 1.8c-3.14 0-3.5.01-4.74.07-.9.04-1.38.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.33-.28.81-.32 1.71C3.21 8.74 3.2 9.1 3.2 12s.01 3.26.08 4.49c.04.9.19 1.38.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.33.13.81.28 1.71.32 1.24.06 1.6.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.38-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.33.28-.81.32-1.71.06-1.23.07-1.59.07-4.49s-.01-3.26-.07-4.49c-.04-.9-.19-1.38-.32-1.71a2.85 2.85 0 0 0-.69-1.06 2.85 2.85 0 0 0-1.06-.69c-.33-.13-.81-.28-1.71-.32C15.5 4.01 15.14 4 12 4zm0 3.06A4.94 4.94 0 1 1 12 16.94 4.94 4.94 0 0 1 12 7.06zm0 1.8A3.14 3.14 0 1 0 12 15.14 3.14 3.14 0 0 0 12 8.86zm6.27-2.06a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z'/%3E%3C/svg%3E&quot;);"></span>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4>Navegação</h4>
+      <div class="foot-contacts">
+        <a href="#sobre">Sobre</a>
+        <a href="#areas">Áreas de atuação</a>
+        <a href="#atendimento">Atendimento</a>
+        <a href="#faq">Dúvidas frequentes</a>
+        <a href="#localizacao">Localização</a>
+      </div>
+    </div>
+  </div>
+  <p class="foot-disclaimer">Publicidade advocatícia em conformidade com o Provimento nº 205/2021 da OAB. As informações deste site têm caráter educativo e não constituem promessa de resultado; cada caso deve ser avaliado individualmente pelo advogado.</p>
+  <div class="site-footer__bottom">
+    <p>© <span id="year">2026</span> Flávio Rigo Sociedade Individual de Advocacia. Todos os direitos reservados.</p>
+    <p class="almeida-credit">Site desenvolvido por <a href="https://almeidaescaladigital.com/" target="_blank" rel="noopener">Almeida Escala Digital</a>. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY BAR ============ -->
+<div id="mobileStickyBar">
+  <a class="btn btn--primary btn--md" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener">
+    <span class="wa-ico" aria-hidden="true"></span> Falar no WhatsApp
+  </a>
+</div>
+
+<!-- ============ WHATSAPP FAB ============ -->
+<a id="whatsappFab" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener" aria-label="Fale conosco no WhatsApp">
+  <span class="wa-ico wa-ico--lg" aria-hidden="true"></span>
+</a>
+
+<!-- ============ WHATSAPP CHAT WIDGET (desktop) ============ -->
+<div id="waWidget" class="wa-widget hidden md-block"
+  data-teaser-delay="10000"
+  data-msg1="Olá! Sou o assistente virtual do escritório. Tem alguma dúvida? Escolha um tema abaixo ou fale direto comigo."
+  data-msg2="Oi, tudo bem? Posso adiantar algumas respostas por aqui. Toque numa dúvida abaixo para começar."
+  data-msg3="Olá! Veja as dúvidas mais comuns abaixo, ou fale comigo no WhatsApp quando quiser."
+  data-end="Ficou com outra dúvida? É só falar comigo no WhatsApp."
+  data-faqs='[]'>
+  <div class="wa-panel">
+    <div class="wa-head">
+      <span class="dot" aria-hidden="true"></span>
+      <span><b>Flávio Rigo · Advocacia</b><small>Costuma responder pelo WhatsApp</small></span>
+    </div>
+    <div class="wa-scroll" id="waScroll">
+      <div class="wa-thread" id="waThread"></div>
+      <div class="wa-quick" id="waQuick" aria-label="Dúvidas frequentes"></div>
+    </div>
+    <a class="wa-cta" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener">Falar no WhatsApp</a>
+  </div>
+  <button type="button" class="wa-close" id="waClose" aria-label="Fechar conversa"></button>
+</div>
+
+<!-- WhatsApp teaser -->
+<div id="waTeaser" class="wa-teaser hidden md-block">
+  <button type="button" class="wa-teaser-bubble" id="waTeaserOpen">Olá! Posso ajudar com alguma dúvida?</button>
+  <button type="button" class="wa-teaser-x" id="waTeaserClose" aria-label="Dispensar mensagem"></button>
+</div>
+
+<!-- ============ GRAIN ============ -->
+<div class="grain" aria-hidden="true"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/js/landing.js?v=13"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

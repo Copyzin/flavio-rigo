@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="20" fill="#1B2A4A"></rect>
+  <path d="M24 34 H96 M24 34 V48 M96 34 V48 M53 45 L60 34 L67 45 M60 45 V86 M48 86 H72" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+  <text x="24" y="68" text-anchor="middle" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="24" font-weight="700" fill="#FFFFFF">F</text>
+  <text x="96" y="68" text-anchor="middle" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="24" font-weight="700" fill="#FFFFFF">R</text>
+</svg>
