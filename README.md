@@ -24,9 +24,9 @@ Desenvolvido por **Almeida Escala Digital**.
 .
 ├── index.html            # Landing principal (ponto de entrada)
 ├── 404.html              # Página de erro 404
-├── styles.css            # Importa os design tokens
-├── tokens/               # Design tokens (variáveis CSS)
-│   ├── fonts.css         #   @import do Google Fonts
+├── styles.css            # Design tokens concatenados (1 unico request; ver nota abaixo)
+├── tokens/               # Design tokens — SOMENTE REFERENCIA, nao lido em runtime
+│   ├── fonts.css         #   nota sobre fontes (Google Fonts via <link> direto no <head>)
 │   ├── colors.css        #   paleta (--fr-navy, --fr-mist, …)
 │   ├── typography.css
 │   ├── spacing.css       #   --container, espaçamentos
@@ -34,18 +34,28 @@ Desenvolvido por **Almeida Escala Digital**.
 │   ├── components.css
 │   └── effects.css
 ├── assets/
-│   ├── favicon.svg
+│   ├── favicon.png
 │   ├── css/
-│   │   └── landing.css   # todos os estilos da landing + 404 + chat WhatsApp
+│   │   ├── landing.css   # todos os estilos da landing + 404 + chat WhatsApp
+│   │   └── blog.css      # estilos do blog (index de categorias + artigos)
 │   ├── js/
 │   │   └── landing.js    # mecânicas (GSAP, parallax, luz, menu, FAB/chat, FAQ)
 │   └── img/
-│       ├── hero-arch.png     # fachada clássica (duotone navy)
-│       ├── hero-lines.png    # linework editorial
-│       └── hero-texture.jpg  # textura de fundo da hero
+│       ├── hero-arch.webp     # fachada clássica (duotone navy)
+│       ├── hero-lines.webp    # linework editorial
+│       └── hero-texture.webp  # textura de fundo da hero
+├── blog/                 # índice de categorias + artigos (rotas estáticas)
 ├── .htaccess             # 404 custom, HTTPS, cache e gzip (Apache/Hostinger)
+├── pagespeed.js           # roda PageSpeed Insights (mobile+desktop) contra o site publicado
 └── README.md
 ```
+
+> **Por que `styles.css` concatena os tokens em vez de `@import`-ar `tokens/*.css`?**
+> `@import` dentro de CSS cria uma cadeia serial: o browser só descobre o próximo arquivo
+> depois de parsear o anterior, e cada um é uma requisição HTTP bloqueando o render. Os
+> arquivos em `tokens/` continuam no repo como referência organizada do design system, mas
+> **editar lá não tem efeito no site** — a fonte viva é `styles.css`. Ao editar um token,
+> replique a mudança no arquivo de referência correspondente para não perder a organização.
 
 ---
 

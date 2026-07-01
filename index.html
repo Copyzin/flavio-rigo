@@ -25,11 +25,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- GSAP/ScrollTrigger sao script tags no fim do body (nao bloqueiam o parser), mas a conexao
+     com o cdnjs so comecava quando o parser chegava la - preconnect adianta DNS/TLS enquanto
+     o resto da pagina ainda esta carregando, entao o JS comeca a executar mais cedo. -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <!-- .hero__bg::after (textura de fundo) e o elemento de LCP - preload evita que o browser
      so descubra essa imagem depois de baixar+interpretar o CSS (era o maior trecho do LCP) -->
 <link rel="preload" as="image" href="assets/img/hero-texture.webp" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,500&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 <link rel="stylesheet" href="assets/css/landing.css?v=24">
 </head>
 <body>
