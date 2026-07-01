@@ -110,7 +110,7 @@ Os marcadores do GTM já estão **prontos no `index.html`** (comentados). Para a
 
 ## Pendências (placeholders no código)
 
-- Nº **OAB/UF** real (hoje `000.000`).
+- Nº **OAB/RS** real: `75.289` (já atualizado no código).
 - **E-mail** real (hoje `contato@flaviorigo.adv.br`).
 - **Foto profissional** (a hero é tipográfica; a seção *Sobre* tem o slot pronto).
 - ID do **Google Tag Manager**.
