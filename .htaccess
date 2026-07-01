@@ -10,6 +10,19 @@ ErrorDocument 404 /404.html
   RewriteEngine On
   RewriteCond %{HTTPS} off
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # URLs limpas: /index.html -> / , /blog/slug/index.html -> /blog/slug/
+  RewriteCond %{THE_REQUEST} \s/+(.*)index\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # URLs limpas: /pagina.html -> /pagina (qualquer .html solto na raiz)
+  RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # Serve o .html internamente sem expor a extensao na URL
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^([^.]+)$ $1.html [L]
 </IfModule>
 
 # Cache dos estaticos (CSS/JS usam ?v= para invalidar quando mudam)
@@ -19,8 +32,19 @@ ErrorDocument 404 /404.html
   ExpiresByType application/javascript "access plus 1 month"
   ExpiresByType image/png           "access plus 1 year"
   ExpiresByType image/jpeg          "access plus 1 year"
+  ExpiresByType image/webp          "access plus 1 year"
   ExpiresByType image/svg+xml       "access plus 1 year"
   ExpiresByType image/x-icon        "access plus 1 year"
+</IfModule>
+
+# Cache-Control explicito para imagens (webp inclusive) - reforca o Expires acima
+<IfModule mod_headers.c>
+  <FilesMatch "\.(webp|png|jpe?g|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
 </IfModule>
 
 # Compressao gzip

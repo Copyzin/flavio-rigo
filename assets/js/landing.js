@@ -20,7 +20,8 @@
      1. Header - scroll-linked exit + threshold reveal (s6)
      --------------------------------------------------------- */
   var header = document.querySelector('.site-header');
-  var hero = document.querySelector('.hero');
+  var hero = document.querySelector('.hero, .page-hero'); /* .page-hero = paginas internas do blog */
+  var isFullHero = !!(hero && hero.classList.contains('hero')); /* so a hero completa (nao .page-hero) tem parallax/timeline propria */
   var EXIT_ZONE = 220;
   var UP_REVEAL_THRESHOLD = 60;
   var DOWN_DELTA_THRESHOLD = 6;
@@ -88,39 +89,41 @@
   }
 
   if (hasGSAP && hasST && !prefersReduced) {
-    // Hero timeline (carga inicial) - palavras sobem da mascara
-    var heroTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.9 } })
-      .to('[data-anim="hero-eyebrow"]', { opacity: 1, y: 0 });
-    if (heroTitle) heroTl.to('#heroTitle .hw > *', { yPercent: 0, y: 0, duration: 0.85, stagger: 0.08, ease: 'power4.out' }, '-=0.55');
-    heroTl
-      .to('[data-anim="hero-sub"]', { opacity: 1, y: 0 }, '-=0.45')
-      .to('[data-anim="hero-cta"]', { opacity: 1, y: 0 }, '-=0.55')
-      .to('[data-anim="hero-badge"]', { opacity: 1, y: 0 }, '-=0.6');
+    if (isFullHero) {
+      // Hero timeline (carga inicial) - palavras sobem da mascara
+      var heroTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.9 } })
+        .to('[data-anim="hero-eyebrow"]', { opacity: 1, y: 0 });
+      if (heroTitle) heroTl.to('#heroTitle .hw > *', { yPercent: 0, y: 0, duration: 0.85, stagger: 0.08, ease: 'power4.out' }, '-=0.55');
+      heroTl
+        .to('[data-anim="hero-sub"]', { opacity: 1, y: 0 }, '-=0.45')
+        .to('[data-anim="hero-cta"]', { opacity: 1, y: 0 }, '-=0.55')
+        .to('[data-anim="hero-badge"]', { opacity: 1, y: 0 }, '-=0.6');
 
-    // Composicao 3D em camadas (SO na hero, dirigida pelo scroll): perspectiva +
-    // rotateX/rotateY + translate3d com profundidades distintas -> ilusao premium
-    // de profundidade/parallax. As camadas de fundo deslocam em ritmos diferentes
-    // do conteudo (foreground estatico e legivel). Tudo em transform (GPU). Nao
-    // toca selo/conteudo/orb (que ja tem transform proprio). Reduzido em telas
-    // menores; o bloco inteiro respeita prefers-reduced-motion (guarda acima).
-    var heroST = { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true };
-    var depthK = window.matchMedia('(min-width: 1100px)').matches ? 1 : 0.4;
-    // Perspectiva CONSTANTE (via set) - NUNCA animar transformPerspective: animar
-    // de ~0 ate 1200 deixava a perspectiva minuscula no inicio do scroll (forte
-    // distorcao), o que aparecia como "mudanca de tamanho" ao comecar a rolar.
-    // force3D: true mantem as camadas SEMPRE em matrix3d (sem a troca 2D<->3D do
-    // 'auto', que re-rasteriza o background cover/contain -> flicker).
-    gsap.set('.hero__arch', { transformPerspective: 1200, force3D: true });
-    gsap.set('.hero__linework', { transformPerspective: 1400, force3D: true });
-    // base (mais profunda): leve zoom + subida
-    gsap.to('.hero__bg', { yPercent: -7 * depthK, scale: 1.05, force3D: true, ease: 'none', scrollTrigger: heroST });
-    // arquitetura (profunda): sobe + inclina no eixo X a partir da base
-    gsap.to('.hero__arch', { yPercent: -12 * depthK, rotateX: 3 * depthK, transformOrigin: '70% 100%', force3D: true, ease: 'none', scrollTrigger: heroST });
-    // painel principal (linework): inclina no eixo Y. A luz (.hero__lit) recebe a
-    // MESMA tween dentro do heroCursorLight (ela so existe depois deste bloco).
-    gsap.to('.hero__linework', { yPercent: -7 * depthK, rotateY: -2.5 * depthK, transformOrigin: '100% 50%', force3D: true, ease: 'none', scrollTrigger: heroST });
-    // acento (frase): deslocamento leve
-    gsap.to('.hero__deco-tag', { yPercent: -4 * depthK, force3D: true, ease: 'none', scrollTrigger: heroST });
+      // Composicao 3D em camadas (SO na hero, dirigida pelo scroll): perspectiva +
+      // rotateX/rotateY + translate3d com profundidades distintas -> ilusao premium
+      // de profundidade/parallax. As camadas de fundo deslocam em ritmos diferentes
+      // do conteudo (foreground estatico e legivel). Tudo em transform (GPU). Nao
+      // toca selo/conteudo/orb (que ja tem transform proprio). Reduzido em telas
+      // menores; o bloco inteiro respeita prefers-reduced-motion (guarda acima).
+      var heroST = { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true };
+      var depthK = window.matchMedia('(min-width: 1100px)').matches ? 1 : 0.4;
+      // Perspectiva CONSTANTE (via set) - NUNCA animar transformPerspective: animar
+      // de ~0 ate 1200 deixava a perspectiva minuscula no inicio do scroll (forte
+      // distorcao), o que aparecia como "mudanca de tamanho" ao comecar a rolar.
+      // force3D: true mantem as camadas SEMPRE em matrix3d (sem a troca 2D<->3D do
+      // 'auto', que re-rasteriza o background cover/contain -> flicker).
+      gsap.set('.hero__arch', { transformPerspective: 1200, force3D: true });
+      gsap.set('.hero__linework', { transformPerspective: 1400, force3D: true });
+      // base (mais profunda): leve zoom + subida
+      gsap.to('.hero__bg', { yPercent: -7 * depthK, scale: 1.05, force3D: true, ease: 'none', scrollTrigger: heroST });
+      // arquitetura (profunda): sobe + inclina no eixo X a partir da base
+      gsap.to('.hero__arch', { yPercent: -12 * depthK, rotateX: 3 * depthK, transformOrigin: '70% 100%', force3D: true, ease: 'none', scrollTrigger: heroST });
+      // painel principal (linework): inclina no eixo Y. A luz (.hero__lit) recebe a
+      // MESMA tween dentro do heroCursorLight (ela so existe depois deste bloco).
+      gsap.to('.hero__linework', { yPercent: -7 * depthK, rotateY: -2.5 * depthK, transformOrigin: '100% 50%', force3D: true, ease: 'none', scrollTrigger: heroST });
+      // acento (frase): deslocamento leve
+      gsap.to('.hero__deco-tag', { yPercent: -4 * depthK, force3D: true, ease: 'none', scrollTrigger: heroST });
+    }
 
     function reveal(selector, vars) {
       gsap.utils.toArray(selector).forEach(function (el) {
@@ -210,7 +213,7 @@
 
   /* ---------------------------------------------------------
      2b. Hero cursor light - disco de luz fria recortado nos
-     pixels das linhas (hero-lines.png), segue o ponteiro com
+     pixels das linhas (hero-lines.webp), segue o ponteiro com
      atraso suave (gsap.quickTo em transform = composited, sem
      repaint por frame) e volta para casa (acima do selo) ao sair.
      Ativa so com ponteiro fino/hover e sem reduced-motion; mobile
@@ -529,19 +532,160 @@
   }
 
   /* ---------------------------------------------------------
-     7. FAQ accordion - apenas um aberto por vez
+     7. FAQ accordion - apenas um aberto por vez, com altura
+     animada via GSAP (fecha o anterior e so no onComplete abre
+     o novo - evita pulo de layout). Fallback sem GSAP: toggle
+     nativo do <details> (FAQ-patterns.md).
      --------------------------------------------------------- */
   var faqItems = document.querySelectorAll('#faqList .faq-item');
   Array.prototype.forEach.call(faqItems, function (item) {
-    item.addEventListener('toggle', function () {
-      if (item.open) {
-        Array.prototype.forEach.call(faqItems, function (other) { if (other !== item) other.open = false; });
+    var summary = item.querySelector('summary');
+    if (!summary) return;
+
+    summary.addEventListener('click', function (e) {
+      if (item.open) return;
+      e.preventDefault();
+
+      var openItem = null;
+      Array.prototype.forEach.call(faqItems, function (other) {
+        if (other !== item && other.open) openItem = other;
+      });
+
+      function openNew() {
+        if (!hasGSAP) { item.open = true; return; }
+        var el = item.querySelector('.faq-a');
+        if (!el) { item.open = true; return; }
+        gsap.set(el, { height: 0 });
+        item.open = true;
+        gsap.to(el, {
+          height: el.scrollHeight,
+          duration: 0.3,
+          ease: 'power2.out',
+          onComplete: function () { gsap.set(el, { clearProps: 'height' }); }
+        });
+      }
+
+      if (openItem && hasGSAP) {
+        var closingEl = openItem.querySelector('.faq-a');
+        gsap.to(closingEl, {
+          height: 0,
+          duration: 0.28,
+          ease: 'power2.inOut',
+          overwrite: 'auto',
+          onComplete: function () {
+            openItem.open = false;
+            gsap.set(closingEl, { clearProps: 'height' });
+            openNew();
+          }
+        });
+      } else {
+        if (openItem) openItem.open = false;
+        openNew();
       }
     });
   });
 
   /* ---------------------------------------------------------
-     8. Watchdog - se as animacoes GSAP nao rodarem (ex.: aba em
+     8. Dropdown de nav - "Areas de atuacao" -> categorias do
+     blog (Dropdown Patterns.md, adaptado: reskin claro, caret via
+     span injetado - nunca ::after -, chave por data-dropdown (nao
+     por href, que muda entre a home e as paginas internas),
+     breakpoint real do projeto (nav some em <=767px), init
+     incondicional (a nav so fica oculta via CSS no mobile).
+     --------------------------------------------------------- */
+  function initNavDropdowns() {
+    var nav = document.querySelector('.site-header__nav');
+    if (!nav) return;
+
+    var MENUS = {
+      areas: {
+        eyebrow: 'Áreas de atuação no blog',
+        items: [
+          { label: 'Regularização de Imóveis', sub: 'Usucapião e documentação', href: '/blog/#regularizacao-de-imoveis' },
+          { label: 'Restituição de IR', sub: 'Doenças graves - aposentados', href: '/blog/#restituicao-ir' },
+          { label: 'Sucessões e Inventários', sub: 'Partilha e planejamento', href: '/blog/#sucessoes-e-inventarios' },
+          { label: 'Direito de Família', sub: 'Divórcio e pensão alimentícia', href: '/blog/#direito-de-familia' }
+        ],
+        allHref: '/blog/',
+        allLabel: 'Ver todos os artigos'
+      }
+    };
+
+    var OPEN_DELAY = 120, CLOSE_DELAY = 220;
+    var controllers = [];
+    function closeOthers(except) { controllers.forEach(function (c) { if (c !== except) c.closeNow(); }); }
+
+    Array.prototype.forEach.call(nav.querySelectorAll('a[data-dropdown]'), function (trigger) {
+      var menu = MENUS[trigger.getAttribute('data-dropdown')];
+      if (!menu) return;
+
+      var group = document.createElement('span');
+      group.className = 'nav-group';
+      trigger.parentNode.insertBefore(group, trigger);
+      group.appendChild(trigger);
+      trigger.classList.add('nav-group__trigger');
+      trigger.setAttribute('aria-haspopup', 'true');
+      trigger.setAttribute('aria-expanded', 'false');
+      var caret = document.createElement('span');
+      caret.className = 'nav-caret';
+      caret.setAttribute('aria-hidden', 'true');
+      trigger.appendChild(caret);
+
+      var itemsHTML = menu.items.map(function (it) {
+        return '<a class="nav-dropdown__item" href="' + it.href + '" role="menuitem">' +
+          '<span class="nav-dropdown__label">' + it.label + '</span>' +
+          '<span class="nav-dropdown__sub">' + it.sub + '</span></a>';
+      }).join('');
+      if (menu.allHref) {
+        itemsHTML += '<a class="nav-dropdown__item nav-dropdown__item--all" href="' + menu.allHref + '" role="menuitem">' +
+          '<span class="nav-dropdown__label">' + menu.allLabel + '</span></a>';
+      }
+
+      var panel = document.createElement('div');
+      panel.className = 'nav-dropdown';
+      panel.setAttribute('role', 'menu');
+      panel.innerHTML = '<div class="nav-dropdown__inner"><p class="nav-dropdown__eyebrow">' + menu.eyebrow + '</p>' + itemsHTML + '</div>';
+      group.appendChild(panel); /* filho do group, nao irmao (hover tolerante) */
+
+      var openT = null, closeT = null;
+      function isOpen() { return group.classList.contains('is-open'); }
+      function showNow() {
+        clearTimeout(openT); clearTimeout(closeT);
+        closeOthers(ctrl); /* exclusao mutua: fecha os outros JA */
+        group.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+      function closeNow() {
+        clearTimeout(openT); clearTimeout(closeT);
+        group.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+      var ctrl = { closeNow: closeNow };
+      controllers.push(ctrl);
+
+      group.addEventListener('mouseenter', function () {
+        clearTimeout(closeT); /* re-entrada rapida cancela o fechamento */
+        if (isOpen()) return;
+        clearTimeout(openT);
+        openT = setTimeout(showNow, OPEN_DELAY); /* exige dwell - flick nao abre */
+      });
+      group.addEventListener('mouseleave', function () {
+        clearTimeout(openT); /* cancela abertura pendente */
+        if (isOpen()) { clearTimeout(closeT); closeT = setTimeout(closeNow, CLOSE_DELAY); }
+      });
+      group.addEventListener('focusin', function () { clearTimeout(closeT); showNow(); }); /* teclado: sem dwell */
+      group.addEventListener('focusout', function (e) {
+        if (!group.contains(e.relatedTarget)) { clearTimeout(closeT); closeT = setTimeout(closeNow, CLOSE_DELAY); }
+      });
+      group.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { closeNow(); trigger.focus(); }
+      });
+    });
+  }
+  initNavDropdowns();
+
+  /* ---------------------------------------------------------
+     9. Watchdog - se as animacoes GSAP nao rodarem (ex.: aba em
      segundo plano com requestAnimationFrame pausado), forca o
      estado final para o conteudo nunca ficar invisivel.
      setTimeout dispara mesmo com rAF estrangulado.

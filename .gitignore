@@ -29,6 +29,13 @@
 /assets/icons/
 /assets/logo-*.svg
 
+# Documentos internos de trabalho (planejamento, identidade visual) - NAO publicar
+*.pdf
+*.docx
+
+# Saida de diagnostico (regeneravel via pagespeed.js)
+/.diagnostics/
+
 # Ferramentas / temporarios / SO
 /.claude/
 /.playwright-mcp/

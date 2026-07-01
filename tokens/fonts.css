@@ -2,6 +2,8 @@
    Display: Playfair Display (autoridade, tradição jurídica, impacto)
    Body/UI: Source Sans 3 (limpa, sóbria, masculina)
    NOTA: servidas via Google Fonts CDN — não há binários de fonte no projeto.
-   Se o cliente fornecer licenças/arquivos próprios, substituir por @font-face locais. */
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,500&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+   Se o cliente fornecer licenças/arquivos próprios, substituir por @font-face locais.
+   O <link> da folha de estilo do Google Fonts fica no <head> de cada pagina (nao aqui via
+   @import) - @import dentro de CSS forca uma cadeia serial (documento -> styles.css ->
+   fonts.css -> Google Fonts -> woff2) que atrasa a descoberta da fonte; um <link> direto no
+   HTML e descoberto pelo preload scanner do browser em paralelo com os outros recursos. */

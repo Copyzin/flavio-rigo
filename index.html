@@ -17,16 +17,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 <title>Flávio Rigo — Advocacia · Atendimento online em todo o Brasil</title>
-<meta name="description" content="Advocacia com atendimento 100% online: regularização de imóveis, restituição de Imposto de Renda para aposentados com doenças graves, sucessões e inventários. Tire suas dúvidas pelo WhatsApp.">
+<meta name="description" content="Advocacia com atendimento 100% online: regularização de imóveis, restituição de Imposto de Renda para aposentados com doenças graves, sucessões e inventários, e direito de família. Tire suas dúvidas pelo WhatsApp.">
 <meta property="og:title" content="Flávio Rigo — Advocacia · Atendimento online em todo o Brasil">
-<meta property="og:description" content="Regularização de imóveis, restituição de IR para aposentados com doenças graves, sucessões e inventários. Sede em Pouso Novo – RS, atendimento 100% online.">
+<meta property="og:description" content="Regularização de imóveis, restituição de IR para aposentados com doenças graves, sucessões e inventários, e direito de família. Sede em Pouso Novo – RS, atendimento 100% online.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="assets/css/landing.css?v=17">
+<!-- .hero__bg::after (textura de fundo) e o elemento de LCP - preload evita que o browser
+     so descubra essa imagem depois de baixar+interpretar o CSS (era o maior trecho do LCP) -->
+<link rel="preload" as="image" href="assets/img/hero-texture.webp" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,500&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="assets/css/landing.css?v=24">
 </head>
 <body>
 
@@ -42,7 +46,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="site-header__inner">
     <a class="site-header__brand" href="#top" aria-label="Flávio Rigo Advocacia — início">
       <span class="brand-mark">
-        <img src="assets/logo.png" alt="Flávio Rigo Advocacia" width="40" height="40" style="display:block;width:40px;height:40px;max-width:none;flex-shrink:0;object-fit:contain;">
+        <img src="assets/logo.webp" alt="Flávio Rigo Advocacia" width="40" height="40" style="display:block;width:40px;height:40px;max-width:none;flex-shrink:0;object-fit:contain;">
       </span>
       <span>
         <span class="brand-name">Flávio Rigo</span>
@@ -51,7 +55,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
     <nav class="site-header__nav" aria-label="Navegação principal">
       <a class="site-header__link" href="#sobre">Sobre</a>
-      <a class="site-header__link" href="#areas">Áreas de atuação</a>
+      <a class="site-header__link" href="#areas" data-dropdown="areas">Áreas de atuação</a>
       <a class="site-header__link" href="#atendimento">Atendimento</a>
       <a class="site-header__link" href="#faq">Dúvidas</a>
       <a class="site-header__link" href="#localizacao">Localização</a>
@@ -67,7 +71,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav id="mobileMenu" aria-label="Navegação mobile">
   <div class="mm-top">
     <span class="mm-brand">
-      <img src="assets/logo.png" alt="Flávio Rigo Advocacia" width="34" height="34" style="display:block;width:34px;height:34px;max-width:none;flex-shrink:0;object-fit:contain;">
+      <img src="assets/logo.webp" alt="Flávio Rigo Advocacia" width="34" height="34" style="display:block;width:34px;height:34px;max-width:none;flex-shrink:0;object-fit:contain;">
       <span>Flávio Rigo<small>Advocacia</small></span>
     </span>
     <button class="mm-close" id="mobileMenuClose" type="button" aria-label="Fechar menu"></button>
@@ -77,10 +81,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="mm-links">
     <a data-menu-item href="#sobre"><i aria-hidden="true">01</i><span>Sobre<small>Quem conduz o seu caso</small></span></a>
-    <a data-menu-item href="#areas"><i aria-hidden="true">02</i><span>Áreas de atuação<small>Imóveis · IR doenças graves · Inventários</small></span></a>
+    <a data-menu-item href="#areas"><i aria-hidden="true">02</i><span>Áreas de atuação<small>Imóveis · IR · Inventários · Família</small></span></a>
     <a data-menu-item href="#atendimento"><i aria-hidden="true">03</i><span>Atendimento<small>Como funciona, passo a passo</small></span></a>
     <a data-menu-item href="#faq"><i aria-hidden="true">04</i><span>Dúvidas<small>Respostas às perguntas mais comuns</small></span></a>
     <a data-menu-item href="#localizacao"><i aria-hidden="true">05</i><span>Localização<small>Pouso Novo – RS · mapa e rotas</small></span></a>
+    <a data-menu-item href="blog/"><i aria-hidden="true">06</i><span>Blog<small>Artigos por área de atuação</small></span></a>
   </div>
 
   <div class="mm-foot" data-menu-cta>
@@ -110,7 +115,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero__inner">
       <p class="eyebrow hero__eyebrow" data-anim="hero-eyebrow">Advocacia · Atendimento 100% online</p>
       <h1 id="heroTitle">Segurança jurídica para o que é <em>seu</em>.</h1>
-      <p class="hero__sub" data-anim="hero-sub">Regularização de imóveis, restituição de Imposto de Renda para aposentados com doenças graves e sucessões e inventários — conduzidos diretamente comigo, com seriedade e linguagem clara, em todo o Brasil.</p>
+      <p class="hero__sub" data-anim="hero-sub">Regularização de imóveis, restituição de Imposto de Renda para aposentados com doenças graves, sucessões e inventários, e direito de família — conduzidos diretamente comigo, com seriedade e linguagem clara, em todo o Brasil.</p>
       <div class="hero__actions" data-anim="hero-cta">
         <a class="btn btn--inverse btn--lg hero-whatsapp-cta" href="#contato">
           <span class="wa-ico wa-ico--green" aria-hidden="true"></span> Falar no WhatsApp
@@ -134,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="numbar" id="numeros" aria-label="Em números">
     <div class="numbar__inner">
       <div class="num-item" data-anim="cred-item">
-        <span class="num-item__value" data-count="3">3</span>
+        <span class="num-item__value" data-count="4">4</span>
         <span class="num-item__label">áreas de atuação<br>especializadas</span>
       </div>
       <div class="num-item" data-anim="cred-item">
@@ -158,15 +163,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="section sobre" id="sobre" data-screen-label="Sobre">
     <div class="wrap sobre__inner">
       <div class="sobre__portrait" data-anim="about-image" aria-hidden="true">
-        <div class="photo-slot">
-          <svg width="64" height="64" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M24 34 H96 M24 34 V48 M96 34 V48 M53 45 L60 34 L67 45 M60 45 V86 M48 86 H72" stroke="#5B7A9D" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><text x="24" y="68" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#5B7A9D">F</text><text x="96" y="68" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#5B7A9D">R</text></svg>
-          <small>Espaço para foto profissional (opcional)</small>
-        </div>
+        <img src="assets/img/sobre-escritorio.webp" alt="" loading="lazy" width="900" height="1200">
       </div>
       <div class="sobre__body" data-anim="about-text">
         <p class="eyebrow">Sobre o advogado</p>
         <h2 class="section-title" style="margin-bottom:30px;">Seriedade e honestidade, do primeiro contato ao fim do caso.</h2>
-        <p data-anim="text-trace" data-trace-stagger-ms="14">Sou Flávio Rigo, advogado. Atuo na regularização de imóveis, na restituição de Imposto de Renda para aposentados com doenças graves e em sucessões e inventários. Cada caso é conduzido diretamente comigo, com linguagem clara e sem juridiquês — para que você entenda cada passo e decida com tranquilidade.</p>
+        <p data-anim="text-trace" data-trace-stagger-ms="14">Sou Flávio Rigo, advogado. Atuo na regularização de imóveis, na restituição de Imposto de Renda para aposentados com doenças graves, em sucessões e inventários, e em direito de família. Cada caso é conduzido diretamente comigo, com linguagem clara e sem juridiquês — para que você entenda cada passo e decida com tranquilidade.</p>
         <div class="sobre__badges">
           <span class="chip chip--outline">OAB/UF nº 000.000</span>
           <span class="chip chip--subtle">Atendimento em todo o Brasil</span>
@@ -196,10 +198,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li>construiu ou ampliou e a área não está averbada;</li>
               <li>recebeu o imóvel de herança e o registro nunca foi atualizado.</li>
             </ul>
-            <a class="btn btn--secondary btn--md wa-ghost" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20regulariza%C3%A7%C3%A3o%20de%20im%C3%B3vel." target="_blank" rel="noopener">Falar sobre meu imóvel</a>
+            <div class="area-block__links">
+              <a class="btn btn--secondary btn--md wa-ghost" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20regulariza%C3%A7%C3%A3o%20de%20im%C3%B3vel." target="_blank" rel="noopener">Falar sobre meu imóvel</a>
+              <a class="area-block__more" href="blog/usucapiao-como-regularizar-imovel-sem-escritura/">Leia mais sobre usucapião</a>
+            </div>
           </div>
           <div class="area-block__visual" data-anim="about-image" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V8l7-5 7 5v13"></path><path d="M9 21v-6h6v6"></path></svg>
+            <div class="area-block__visual-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V8l7-5 7 5v13"></path><path d="M9 21v-6h6v6"></path></svg>
+            </div>
           </div>
         </article>
 
@@ -215,10 +222,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li>pagou Imposto de Renda sobre a aposentadoria nos últimos anos.</li>
             </ul>
             <p class="area-block__note">Lista exemplificativa — cada caso precisa ser confirmado com o advogado.</p>
-            <a class="btn btn--secondary btn--md wa-ghost" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Sou%20aposentado(a)%20e%20gostaria%20de%20saber%20se%20tenho%20direito%20%C3%A0%20isen%C3%A7%C3%A3o%20de%20IR." target="_blank" rel="noopener">Verificar meu direito</a>
+            <div class="area-block__links">
+              <a class="btn btn--secondary btn--md wa-ghost" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Sou%20aposentado(a)%20e%20gostaria%20de%20saber%20se%20tenho%20direito%20%C3%A0%20isen%C3%A7%C3%A3o%20de%20IR." target="_blank" rel="noopener">Verificar meu direito</a>
+              <a class="area-block__more" href="blog/isencao-ir-aposentados-doenca-grave/">Leia mais sobre isenção de IR</a>
+            </div>
           </div>
           <div class="area-block__visual" data-anim="about-image" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            <div class="area-block__visual-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            </div>
           </div>
         </article>
 
@@ -233,15 +245,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li>existe um inventário parado ou nunca aberto;</li>
               <li>quer organizar a sucessão em vida, com segurança para a família.</li>
             </ul>
-            <a class="btn btn--secondary btn--md wa-ghost" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20invent%C3%A1rio%20ou%20sucess%C3%A3o." target="_blank" rel="noopener">Falar sobre inventário</a>
+            <div class="area-block__links">
+              <a class="btn btn--secondary btn--md wa-ghost" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20invent%C3%A1rio%20ou%20sucess%C3%A3o." target="_blank" rel="noopener">Falar sobre inventário</a>
+              <a class="area-block__more" href="blog/#sucessoes-e-inventarios">Leia mais sobre inventários</a>
+            </div>
           </div>
           <div class="area-block__visual" data-anim="about-image" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M16 13H8"></path><path d="M16 17H8"></path><path d="M10 9H8"></path></svg>
+            <div class="area-block__visual-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M16 13H8"></path><path d="M16 17H8"></path><path d="M10 9H8"></path></svg>
+            </div>
+          </div>
+        </article>
+
+        <article class="area-block area-block--flip">
+          <div class="area-block__body" data-anim="about-text">
+            <span class="area-block__num" aria-hidden="true">04</span>
+            <h3>Direito de Família</h3>
+            <p>Divórcio, separação e pensão alimentícia conduzidos com discrição e cuidado, para resolver com o menor desgaste possível para você e sua família.</p>
+            <p class="area-block__check-title">Você pode precisar desse serviço se…</p>
+            <ul class="area-block__check">
+              <li>quer formalizar uma separação ou divórcio, consensual ou não;</li>
+              <li>precisa fixar, revisar ou cobrar pensão alimentícia;</li>
+              <li>tem dúvidas sobre guarda dos filhos ou partilha de bens;</li>
+              <li>busca orientação antes de tomar qualquer decisão.</li>
+            </ul>
+            <div class="area-block__links">
+              <a class="btn btn--secondary btn--md wa-ghost" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20div%C3%B3rcio%20ou%20pens%C3%A3o%20aliment%C3%ADcia." target="_blank" rel="noopener">Falar sobre meu caso</a>
+              <a class="area-block__more" href="blog/divorcio-e-pensao-alimenticia-como-funciona/">Leia mais sobre divórcio e pensão</a>
+            </div>
+          </div>
+          <div class="area-block__visual" data-anim="about-image" aria-hidden="true">
+            <div class="area-block__visual-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
           </div>
         </article>
 
       </div>
-      <p class="areas__note">Conteúdo de caráter informativo. As áreas e demais informações devem ser confirmadas com o advogado.</p>
     </div>
   </section>
 
@@ -318,6 +358,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <summary><span>Como funciona um inventário?</span><span class="faq-mark" aria-hidden="true"></span></summary>
           <div class="faq-a"><p>O inventário pode ser feito pela via judicial ou em cartório, conforme o caso. Cuido da partilha e da documentação para resolver com segurança.</p></div>
         </details>
+        <details class="faq-item" data-anim="faq-item">
+          <summary><span>Como funciona o divórcio consensual?</span><span class="faq-mark" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Quando o casal não tem filhos menores ou incapazes e está de acordo com todos os termos, o divórcio pode ser feito direto em cartório, de forma mais rápida. Sem esse consenso, o caminho é judicial.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLOG (destaques) ============ -->
+  <section class="section blog-wall" id="blog" data-screen-label="Blog">
+    <div class="wrap">
+      <div class="blog-wall__head">
+        <p class="eyebrow" data-anim="section-title">Blog</p>
+        <h2 class="section-title" data-anim="section-title">Conteúdo para você entender seus direitos</h2>
+      </div>
+      <div class="blog-wall__grid">
+        <a class="blog-card" data-anim="service-card" href="blog/divorcio-e-pensao-alimenticia-como-funciona/">
+          <span class="blog-card__cat">Direito de Família</span>
+          <h3 class="blog-card__title">Divórcio e pensão alimentícia: como funciona</h3>
+          <p class="blog-card__excerpt">Divórcio consensual ou litigioso, cartório ou justiça, e como a pensão alimentícia é calculada e cobrada quando não é paga.</p>
+          <span class="blog-card__meta">08 jul 2026 · 3 min de leitura</span>
+        </a>
+        <a class="blog-card" data-anim="service-card" href="blog/quem-herda-primeiro-ordem-vocacao-hereditaria/">
+          <span class="blog-card__cat">Sucessões e Inventários</span>
+          <h3 class="blog-card__title">Quem herda primeiro? A ordem de vocação hereditária</h3>
+          <p class="blog-card__excerpt">O Código Civil estabelece uma ordem de prioridade para quem recebe a herança — e o regime de bens do casamento muda tudo.</p>
+          <span class="blog-card__meta">01 jul 2026 · 4 min de leitura</span>
+        </a>
+        <a class="blog-card" data-anim="service-card" href="blog/isencao-ir-aposentados-doenca-grave/">
+          <span class="blog-card__cat">Restituição de IR</span>
+          <h3 class="blog-card__title">Isenção de Imposto de Renda para aposentados com doença grave</h3>
+          <p class="blog-card__excerpt">Quais doenças dão direito à isenção, como funciona a restituição de valores pagos e o que é preciso para comprovar.</p>
+          <span class="blog-card__meta">26 jun 2026 · 2 min de leitura</span>
+        </a>
+        <a class="blog-card" data-anim="service-card" href="blog/usucapiao-como-regularizar-imovel-sem-escritura/">
+          <span class="blog-card__cat">Regularização de Imóveis</span>
+          <h3 class="blog-card__title">Usucapião: como regularizar um imóvel sem escritura</h3>
+          <p class="blog-card__excerpt">Requisitos, modalidades e o caminho — judicial ou direto em cartório — para colocar em seu nome um imóvel que já é seu.</p>
+          <span class="blog-card__meta">19 jun 2026 · 4 min de leitura</span>
+        </a>
       </div>
     </div>
   </section>
@@ -368,6 +448,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="cta-pill" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20regulariza%C3%A7%C3%A3o%20de%20im%C3%B3vel." target="_blank" rel="noopener">Quero regularizar um imóvel</a>
         <a class="cta-pill" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Sou%20aposentado(a)%20e%20gostaria%20de%20saber%20se%20tenho%20direito%20%C3%A0%20isen%C3%A7%C3%A3o%20de%20IR." target="_blank" rel="noopener">Sou aposentado com doença grave</a>
         <a class="cta-pill" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20invent%C3%A1rio%20ou%20sucess%C3%A3o." target="_blank" rel="noopener">Preciso de inventário</a>
+        <a class="cta-pill" href="https://wa.me/5551998817109?text=Ol%C3%A1!%20Preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20div%C3%B3rcio%20ou%20pens%C3%A3o%20aliment%C3%ADcia." target="_blank" rel="noopener">Divórcio ou pensão alimentícia</a>
       </div>
       <p class="cta-final__trust" data-anim="final-cta">resposta pelo WhatsApp · sem compromisso · atendimento em todo o Brasil</p>
     </div>
@@ -378,7 +459,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer class="site-footer" data-screen-label="Rodapé">
   <div class="site-footer__inner">
     <div>
-      <img src="assets/logo.png" alt="Flávio Rigo Advocacia" width="44" height="44" style="display:block;width:44px;height:44px;max-width:none;flex-shrink:0;object-fit:contain;">
+      <img src="assets/logo.webp" alt="Flávio Rigo Advocacia" width="44" height="44" style="display:block;width:44px;height:44px;max-width:none;flex-shrink:0;object-fit:contain;">
       <p style="color:#fff;font-weight:600;margin:14px 0 6px;font-family:var(--font-display);font-size:1.2rem;">Flávio Rigo</p>
       <p style="max-width:34ch;">Sociedade Individual de Advocacia · atendimento online em todo o Brasil.</p>
     </div>
@@ -409,6 +490,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="#atendimento">Atendimento</a>
         <a href="#faq">Dúvidas frequentes</a>
         <a href="#localizacao">Localização</a>
+        <a href="blog/">Blog</a>
       </div>
     </div>
   </div>
@@ -464,7 +546,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="assets/js/landing.js?v=13"></script>
+<script src="assets/js/landing.js?v=17"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
